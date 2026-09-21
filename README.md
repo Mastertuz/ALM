@@ -6,10 +6,10 @@
 
 ## Содержимое ветки
 
-- [solutions/pr2/Текущий контроль 2.ipynb](solutions/pr2/Текущий%20контроль%202.ipynb) — решение: бинарная классификация вин (`winequality-red.csv`) на "Хорошее" (`quality >= 7`) и "Не качественное" логистической регрессией, уравнение разделяющей гиперплоскости.
+- [solutions/pr2/Текущий контроль 2.ipynb](solutions/pr2/Текущий%20контроль%202.ipynb) — решение: бинарная классификация вин (`winequality-red.csv`) на "Хорошее" (`quality >= 7`) и "Не качественное" логистической регрессией: разбиение train/test, уравнение разделяющей гиперплоскости, классификация неизвестных вин, Accuracy / Precision / Recall, confusion matrix.
 - [solutions/pr2/winequality-red.csv](solutions/pr2/winequality-red.csv) — исходные данные.
 - [solutions/pr2/requirements.txt](solutions/pr2/requirements.txt) — зависимости для запуска в Google Colab.
 
 ## Итог
 
-Accuracy на обучающей выборке ≈ 88%. Уравнение разделяющей гиперплоскости (11 признаков + константа) выведено в последней ячейке ноутбука.
+На тестовой выборке (25%, 400 вин): Accuracy = 0.845, Precision = 0.395, Recall = 0.278 (класс "Хорошее"). Из-за дисбаланса классов (~14% хороших вин) Recall низкий; с `class_weight='balanced'` Recall = 0.667 ценой падения Precision (0.336) и Accuracy (0.778). Подробности и confusion matrix — в ноутбуке.
